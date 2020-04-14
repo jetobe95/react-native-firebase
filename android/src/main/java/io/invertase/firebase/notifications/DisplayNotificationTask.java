@@ -380,6 +380,7 @@ public class DisplayNotificationTask extends AsyncTask<Void, Void, Void> {
 
       // Build the notification and send it
       Notification builtNotification = nb.build();
+      builtNotification.flags = Notification.FLAG_INSISTENT;
       notificationManager.notify(tag, notificationId.hashCode(), builtNotification);
 
       if (reactContextWeakReference.get() != null) {
